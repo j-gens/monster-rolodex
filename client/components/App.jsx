@@ -1,5 +1,5 @@
 import React from 'react';
-import MonsterList from './monster-list/MonsterList.jsx';
+import MonsterList from './monster-list/monster-list.component.jsx';
 
 class App extends React.Component {
   constructor() {
