@@ -1,5 +1,5 @@
 import React from 'react';
-import MonsterListEntry from './MonsterListEntry.jsx';
+import MonsterListEntry from '../monster/MonsterListEntry.jsx';
 
 const MonsterList = (props) => (
   <div>
