@@ -1,12 +1,21 @@
 import React from 'react';
 import './search.styles.css';
 
-const Search = () => {
-  return (
-    <div className="search-bin">
-      search bar goes here
-    </div>
-  )
+class Search extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+
+    }
+  }
+
+  render() {
+    return (
+      <div className="search-bin">
+        <input type="search" placeholder="search monsters" />
+      </div>
+    )
+  }
 }
 
 export default Search;
