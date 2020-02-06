@@ -1,8 +1,17 @@
 .monster-bin {
   display: flex;
   flex-direction: column;
-  border: 1px solid gray;
+  align-items: center;
+  background-color: lightgoldenrodyellow;
+  border: 2px solid gray;
   border-radius: 5px;
   padding: 20px;
-
+  font-size: 20px;
+}
+.monster-bin:hover {
+  transform: scale(1.15);
+}
+.monster-name {
+  font-weight: 600;
+  padding: 10px;
 }
