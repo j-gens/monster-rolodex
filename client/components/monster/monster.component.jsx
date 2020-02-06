@@ -3,7 +3,16 @@ import './monster.styles.css';
 
 const MonsterListEntry = (props) => (
   <div className="monster-bin">
-    {props.monster.name}
+    <img alt="monster" src={`https://robohash.org/${props.monster.id}?set=set1&size=180x180`} />
+    <div className="monster-name">
+      Name: {props.monster.name}
+    </div>
+    <div>
+      Username: {props.monster.username}
+    </div>
+    <div>
+      Email: {props.monster.email}
+    </div>
   </div>
 )
 
