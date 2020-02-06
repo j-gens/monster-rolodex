@@ -1,12 +1,16 @@
 import React from 'react';
 import MonsterList from './monster-list/monster-list.component.jsx';
+import Search from './search/search.component.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      monsterList: []
+      monsterList: [],
+      searchField: '',
+      placeholder: 'search monsters'
     }
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -15,13 +19,23 @@ class App extends React.Component {
       .then(monsters => this.setState({monsterList: monsters}, () => console.log(this.state)))
   }
 
+  handleSearch(e) {
+    this.setState({ searchField: e.target.value })
+  }
+
   render() {
+    const { monsterList, searchField } = this.state;
+    const filteredMonsterList = monsterList.filter(monster => {
+      console.log(monster.name.toLowerCase());
+      monster.name.toLowerCase().includes(searchField.toLowerCase());
+    })
+
     return (
-      <div>
+      <>
         <div>Monsters Rolodex</div>
-        {/* <Search /> */}
+        <Search placeholder={this.state.placeholder} handleSearch={this.handleSearch} />
         <MonsterList monsterList={this.state.monsterList} />
-      </div>
+      </>
     )
   }
 }
