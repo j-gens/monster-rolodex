@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  background-color: rgba(103, 103, 168, 0.623);
+  padding: 20px;
+}
+
+.title-bin {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+}
+
+.subtitle-bin {
+  font-size: 25px;
+}
