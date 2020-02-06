@@ -1,6 +1,7 @@
 import React from 'react';
 import MonsterList from './monster-list/monster-list.component.jsx';
 import Search from './search/search.component.jsx';
+import './App.css';
 
 class App extends React.Component {
   constructor() {
@@ -10,7 +11,6 @@ class App extends React.Component {
       searchField: '',
       placeholder: 'search monsters'
     }
-    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class App extends React.Component {
       .then(monsters => this.setState({monsterList: monsters}, () => console.log(this.state)))
   }
 
-  handleSearch(e) {
+  handleSearch = e => {
     console.log(e.target.value)
     this.setState({ searchField: e.target.value })
   }
@@ -31,11 +31,16 @@ class App extends React.Component {
     );
 
     return (
-      <>
-        <div>Monsters Rolodex</div>
+      <div className="App">
+        <div className="title-bin">
+          Monsters Rolodex
+          <div className="subtitle-bin">
+            Keep track of all your fiendish friends!
+          </div>
+        </div>
         <Search placeholder={this.state.placeholder} handleSearch={this.handleSearch} />
         <MonsterList monsterList={filteredMonsterList} />
-      </>
+      </div>
     )
   }
 }
